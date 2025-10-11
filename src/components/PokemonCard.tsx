@@ -1,7 +1,7 @@
 // src/components/PokemonCard.tsx
-import React from 'react';
-import { Link } from 'react-router-dom';
-import PokemonTypeLabel from './PokemonTypeLabel';
+import React from "react";
+import { Link } from "react-router-dom";
+import PokemonTypeLabel from "./PokemonTypeLabel";
 
 export type PokemonDetail = {
   name: string;
@@ -9,14 +9,14 @@ export type PokemonDetail = {
   japaneseName: string;
   number: string;
   types: { type: { name: string } }[];
-}
+};
 
 type PokemonCardProps = {
   pokemon: PokemonDetail;
 };
 
 const PokemonCard: React.FC<PokemonCardProps> = ({ pokemon }) => {
-  const id = pokemon.url.split('/').filter(Boolean).pop();
+  const id = pokemon.url.split("/").filter(Boolean).pop();
   const imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
 
   return (
@@ -27,7 +27,10 @@ const PokemonCard: React.FC<PokemonCardProps> = ({ pokemon }) => {
         <h2 className="mt-2 text-lg font-semibold">{pokemon.japaneseName}</h2>
         <div className="flex gap-2 mt-2">
           {pokemon.types?.map((typeInfo) => (
-            <PokemonTypeLabel key={typeInfo.type.name} type={typeInfo.type.name} />
+            <PokemonTypeLabel
+              key={typeInfo.type.name}
+              type={typeInfo.type.name}
+            />
           ))}
         </div>
       </div>
@@ -36,4 +39,3 @@ const PokemonCard: React.FC<PokemonCardProps> = ({ pokemon }) => {
 };
 
 export default PokemonCard;
-
