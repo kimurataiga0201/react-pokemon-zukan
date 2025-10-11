@@ -1,12 +1,14 @@
 // src/components/PokemonCard.tsx
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PokemonTypeLabel from './PokemonTypeLabel';
 
 export type PokemonDetail = {
   name: string;
   url: string;
   japaneseName: string;
   number: string;
+  types: { type: { name: string } }[];
 }
 
 type PokemonCardProps = {
@@ -23,6 +25,11 @@ const PokemonCard: React.FC<PokemonCardProps> = ({ pokemon }) => {
         <p className="text-sm text-gray-500 mr-auto">No. {pokemon.number}</p>
         <img src={imageUrl} alt={pokemon.japaneseName} className="w-20 h-20" />
         <h2 className="mt-2 text-lg font-semibold">{pokemon.japaneseName}</h2>
+        <div className="flex gap-2 mt-2">
+          {pokemon.types?.map((typeInfo) => (
+            <PokemonTypeLabel key={typeInfo.type.name} type={typeInfo.type.name} />
+          ))}
+        </div>
       </div>
     </Link>
   );

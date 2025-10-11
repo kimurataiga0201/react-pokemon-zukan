@@ -10,6 +10,7 @@ export type PokemonWithJapaneseName = {
   url: string; // ポケモンの詳細情報を取得するためのURL
   japaneseName: string; // ポケモンの日本語名
   number: string; // ポケモンの図鑑番号
+  types: { type: { name: string } }[]; // ポケモンのタイプ
 };
 
 // 日本語名を含むポケモンリストの結果を表す型
