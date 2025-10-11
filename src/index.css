@@ -1,3 +1,12 @@
+/* src/index.css */
+@import "tailwindcss";
+
+@theme {
+  --font-family-sans: "Noto Sans JP", "sans-serif";
+  --color-brand: #ffcb05;
+  --color-brand-dark: #b98c00;
+}
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -65,12 +74,4 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
-/* src/index.css */
-@import "tailwindcss";
-
-@theme {
-  --font-family-sans: "Noto Sans JP", "sans-serif";
-  --color-brand: #ffcb05;
-  --color-brand-dark: #b98c00;
 }
